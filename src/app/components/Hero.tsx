@@ -9,7 +9,7 @@ export function Hero() {
         </div>
 
         <h1 className="text-4xl sm:text-5xl lg:text-6xl mb-4">
-          Olá, eu sou <span className="text-primary">Jimy Kauã</span>
+          Olá, eu sou <span className="text-primary">Jimy Santos</span>
         </h1>
 
         <p className="text-xl sm:text-2xl text-muted-foreground mb-8">
