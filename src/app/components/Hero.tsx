@@ -12,7 +12,7 @@ export function Hero() {
           Olá, eu sou <span className="text-primary">Jimy Kauã</span>
         </h1>
 
-        <p className="text-lg sm:text-2xl text-muted-foreground mb-8 break-words max-w-xs mx-auto">
+        <p className="text-xl sm:text-2xl text-muted-foreground mb-8">
           Desenvolvedor Backend
         </p>
 
