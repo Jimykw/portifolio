@@ -17,21 +17,42 @@ export function Projects() {
   const [notifyEmail, setNotifyEmail] = useState('');
   const [notifySuccess, setNotifySuccess] = useState(false);
 
+  const resolveAssetPath = (assetPath: string) => {
+    if (/^(https?:)?\/\//.test(assetPath)) {
+      return assetPath;
+    }
+
+    const isGitHubPagesProject = window.location.pathname.startsWith('/portifolio/');
+    const basePath = isGitHubPagesProject ? '/portifolio/' : '/';
+
+    return `${basePath}${assetPath.replace(/^\//, '')}`;
+  };
+
   const projects: Project[] = [
     {
       id: 1,
       title: 'GymFinanças Pro',
-      description: 'Sistema full stack de gestão financeira para academias com dashboard em tempo real, controle de inadimplência, cobrança via Pix e relatórios gerenciais. Solução pronta para produção, com suporte a múltiplas filiais e automações financeiras.',
-      technologies: ['React 18', 'TypeScript', 'TailwindCSS', 'Recharts', 'FastAPI', 'SQLAlchemy', 'Supabase'],
+      description:
+        'Sistema full stack de gestão financeira para academias com dashboard em tempo real, controle de inadimplência, cobrança via Pix e relatórios gerenciais. Solução pronta para produção, com suporte a múltiplas filiais e automações financeiras.',
+      technologies: [
+        'React 18',
+        'TypeScript',
+        'TailwindCSS',
+        'Recharts',
+        'FastAPI',
+        'SQLAlchemy',
+        'Supabase',
+      ],
       image: '/projects/gymfinancas-dashboard.png',
-      link: 'https://github.com/Jimykw'
+      link: 'https://github.com/Jimykw',
     },
     {
       id: 2,
       title: 'Novo Projeto em Breve',
-      description: 'Estou sempre desenvolvendo novos projetos e ampliando meu portfólio. Fique de olho para ver as próximas novidades!',
-      isComingSoon: true
-    }
+      description:
+        'Estou sempre desenvolvendo novos projetos e ampliando meu portfólio. Fique de olho para ver as próximas novidades!',
+      isComingSoon: true,
+    },
   ];
 
   const handleNotifySubmit = (event: React.FormEvent) => {
@@ -60,74 +81,78 @@ export function Projects() {
 
           <div className="flex justify-center">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          {projects.map((project) => (
-            <div
-              key={project.id}
-              className="group w-full max-w-sm rounded-lg border border-border bg-card overflow-hidden flex flex-col transition-all duration-300 hover:border-primary hover:shadow-2xl hover:-translate-y-1"
-            >
-              {project.image && !project.isComingSoon && (
-                <div className="w-full h-48 overflow-hidden bg-muted relative">
-                  <ImageWithFallback
-                    src={project.image}
-                    alt={project.title}
-                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-                  />
-                  <div className="absolute inset-0 bg-black/0 transition-colors duration-300 group-hover:bg-black/10" />
-                </div>
-              )}
+              {projects.map((project) => (
+                <div
+                  key={project.id}
+                  className="group w-full max-w-sm rounded-lg border border-border bg-card overflow-hidden flex flex-col transition-all duration-300 hover:border-primary hover:shadow-2xl hover:-translate-y-1"
+                >
+                  {project.image && !project.isComingSoon && (
+                    <div className="w-full h-48 overflow-hidden bg-muted relative">
+                      <ImageWithFallback
+                        src={resolveAssetPath(project.image)}
+                        alt={project.title}
+                        className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                      />
+                      <div className="absolute inset-0 bg-black/0 transition-colors duration-300 group-hover:bg-black/10" />
+                    </div>
+                  )}
 
-              {project.isComingSoon && (
-                <div className="w-full h-48 bg-gradient-to-br from-primary/20 to-primary/10 flex items-center justify-center transition-all duration-300 group-hover:from-primary/30 group-hover:to-primary/20">
-                  <div className="text-center">
-                    <div className="text-5xl text-primary mb-2 transition-transform duration-300 group-hover:scale-110">★</div>
-                    <p className="text-primary font-semibold">Em Breve</p>
-                  </div>
-                </div>
-              )}
+                  {project.isComingSoon && (
+                    <div className="w-full h-48 bg-gradient-to-br from-primary/20 to-primary/10 flex items-center justify-center transition-all duration-300 group-hover:from-primary/30 group-hover:to-primary/20">
+                      <div className="text-center">
+                        <div className="text-5xl text-primary mb-2 transition-transform duration-300 group-hover:scale-110">★</div>
+                        <p className="text-primary font-semibold">Em Breve</p>
+                      </div>
+                    </div>
+                  )}
 
-              <div className="p-6 flex flex-col flex-grow">
-                <h3 className="text-xl font-semibold mb-3 transition-colors duration-300 group-hover:text-primary">{project.title}</h3>
-                <p className="text-muted-foreground mb-6 flex-grow transition-colors duration-300 group-hover:text-foreground/80">
-                  {project.description}
-                </p>
+                  <div className="p-6 flex flex-col flex-grow">
+                    <h3 className="text-xl font-semibold mb-3 transition-colors duration-300 group-hover:text-primary">
+                      {project.title}
+                    </h3>
+                    <p className="text-muted-foreground mb-6 flex-grow transition-colors duration-300 group-hover:text-foreground/80">
+                      {project.description}
+                    </p>
 
-                {!!project.technologies?.length && (
-                  <div className="mb-6 grid grid-cols-4 gap-2">
-                    {project.technologies.map((technology) => (
-                      <span
-                        key={technology}
-                        className={`px-3 py-1 rounded-full text-xs border ${technology.startsWith('Linguagem:')
-                          ? 'border-red-500/60 bg-red-500/10 text-red-300'
-                          : 'border-border bg-muted/70 text-foreground/80'} text-center leading-tight`}
+                    {!!project.technologies?.length && (
+                      <div className="mb-6 flex flex-wrap gap-2">
+                        {project.technologies.map((technology) => (
+                          <span
+                            key={technology}
+                            className={`px-3 py-1 rounded-full text-xs border ${
+                              technology.startsWith('Linguagem:')
+                                ? 'border-red-500/60 bg-red-500/10 text-red-300'
+                                : 'border-border bg-muted/70 text-foreground/80'
+                            } inline-flex max-w-full items-center justify-center whitespace-normal break-words text-center leading-tight`}
+                          >
+                            {technology}
+                          </span>
+                        ))}
+                      </div>
+                    )}
+
+                    {project.isComingSoon ? (
+                      <button
+                        onClick={() => setIsNotifyModalOpen(true)}
+                        className="flex items-center justify-center gap-2 px-4 py-2 rounded-full border border-red-500 text-red-400 bg-transparent font-semibold w-full transition-all duration-300 hover:bg-red-500/20 hover:border-red-400 hover:text-red-300"
                       >
-                        {technology}
-                      </span>
-                    ))}
+                        <Bell size={18} />
+                        <span>Receber notificação</span>
+                      </button>
+                    ) : (
+                      <a
+                        href={project.link || '#'}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="flex items-center gap-2 text-primary text-sm font-semibold transition-all duration-300 hover:gap-3 hover:translate-x-1"
+                      >
+                        <ExternalLink size={16} />
+                        <span>Ver projeto</span>
+                      </a>
+                    )}
                   </div>
-                )}
-
-                {project.isComingSoon ? (
-                  <button
-                    onClick={() => setIsNotifyModalOpen(true)}
-                    className="flex items-center justify-center gap-2 px-4 py-2 rounded-full border border-red-500 text-red-400 bg-transparent font-semibold w-full transition-all duration-300 hover:bg-red-500/20 hover:border-red-400 hover:text-red-300"
-                  >
-                    <Bell size={18} />
-                    <span>Receber notificação</span>
-                  </button>
-                ) : (
-                  <a
-                    href={project.link || '#'}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex items-center gap-2 text-primary text-sm font-semibold transition-all duration-300 hover:gap-3 hover:translate-x-1"
-                  >
-                    <ExternalLink size={16} />
-                    <span>Ver projeto</span>
-                  </a>
-                )}
-              </div>
-            </div>
-          ))}
+                </div>
+              ))}
             </div>
           </div>
         </div>
@@ -167,11 +192,7 @@ export function Projects() {
               </button>
             </form>
 
-            {notifySuccess && (
-              <p className="mt-4 text-primary font-medium">
-                Email cadastrado com sucesso!
-              </p>
-            )}
+            {notifySuccess && <p className="mt-4 text-primary font-medium">Email cadastrado com sucesso!</p>}
           </div>
         </div>
       )}
