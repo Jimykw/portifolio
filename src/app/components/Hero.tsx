@@ -68,17 +68,6 @@ export function Hero() {
         {/* Foto à direita */}
         <div className="flex-1 flex items-center justify-center">
           <div className="relative flex items-center justify-center w-96 h-96">
-            <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-80 h-80 rounded-full pointer-events-none z-0"
-              style={{
-                boxShadow: '0 0 80px 30px rgba(185, 28, 28, 0.5), 0 0 120px 60px rgba(185, 28, 28, 0.2)'
-              }}
-            />
-            <img
-              src="/projects/jimy-profile.jpg"
-              alt="Foto de Jimy Kauã"
-              className="relative w-80 h-80 object-cover rounded-full border-4 border-red-700 shadow-lg z-10"
-              style={{ zIndex: 1 }}
-            />
           </div>
         </div>
       </div>
