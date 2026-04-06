@@ -44,7 +44,7 @@ export function Projects() {
         'Supabase',
       ],
       image: '/projects/gymfinancas-dashboard.png',
-      link: 'https://github.com/Jimykw',
+      link: 'https://jimykw.github.io/GymFinancasPro/',
     },
     {
       id: 2,
