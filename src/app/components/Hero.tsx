@@ -1,6 +1,8 @@
 import { Github, Linkedin, Mail } from 'lucide-react';
 
 export function Hero() {
+  const profileImageSrc = `${import.meta.env.BASE_URL}projects/jimy-profile.jpeg`;
+
   return (
     <section id="home" className="min-h-screen flex items-center justify-center px-4 sm:px-6 lg:px-8 pt-16 bg-black">
       <div className="w-full max-w-6xl mx-auto flex flex-col lg:flex-row items-center justify-between gap-8">
@@ -73,7 +75,7 @@ export function Hero() {
           <div className="relative flex items-center justify-center w-[28rem] h-[28rem]">
             {/* Imagem do perfil sempre na frente */}
             <img
-              src="/projects/jimy-profile.jpeg"
+              src={profileImageSrc}
               alt="Jimy Kauã - Desenvolvedor Backend"
               className="profile-image absolute w-[24rem] h-[24rem] object-cover rounded-full border-4 border-zinc-900 shadow-2xl z-20"
               loading="eager"
