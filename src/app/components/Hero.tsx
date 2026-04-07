@@ -71,20 +71,22 @@ export function Hero() {
         {/* Foto à direita */}
         <div className="flex-1 flex items-center justify-center">
           <div className="relative flex items-center justify-center w-[28rem] h-[28rem]">
-            {/* Glow Effect */}
-            <div className="absolute w-full h-full rounded-full z-0"
+            {/* Imagem do perfil sempre na frente */}
+            <img
+              src="/projects/jimy-profile.jpeg"
+              alt="Jimy Kauã - Desenvolvedor Backend"
+              className="profile-image absolute w-[24rem] h-[24rem] object-cover rounded-full border-4 border-zinc-900 shadow-2xl z-20"
+              loading="eager"
+              style={{ left: '50%', top: '50%', transform: 'translate(-50%, -50%)' }}
+            />
+            {/* Glow Effect atrás */}
+            <div
+              className="absolute w-full h-full rounded-full z-10"
               style={{
                 background: 'radial-gradient(circle, rgba(185,28,28,0.5) 60%, transparent 100%)',
                 filter: 'blur(48px)'
               }}
             ></div>
-            {/* Profile Image */}
-            <img
-              src="/projects/jimy-profile.jpeg"
-              alt="Jimy Kauã - Desenvolvedor Backend"
-              className="profile-image relative w-[24rem] h-[24rem] object-cover rounded-full border-4 border-zinc-900 shadow-2xl z-10"
-              loading="eager"
-            />
           </div>
         </div>
       </div>
