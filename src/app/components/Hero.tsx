@@ -6,16 +6,12 @@ export function Hero() {
       <div className="w-full max-w-6xl mx-auto flex flex-col lg:flex-row items-center justify-between gap-8">
         {/* Texto à esquerda */}
         <div className="flex-1 flex flex-col items-start justify-center lg:pr-8">
-          <>
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold mb-2 text-white text-left whitespace-nowrap">
-              Olá, sou <span className="text-primary">Jimy Kauã</span>
-            </h1>
-            <h2 className="text-2xl sm:text-3xl font-semibold mb-4 text-white text-left min-h-[2.5rem]">
-              <span className="typing-effect">
-                Eu sou um <span className="text-primary">Desenvolvedor Backend</span>
-              </span>
-            </h2>
-            <p className="text-base sm:text-lg text-white/80 mb-8 max-w-2xl text-left">
+            <img
+              src="/projects/jimy-profile.jpeg"
+              alt="Jimy Kauã - Desenvolvedor Backend"
+              className="profile-image relative w-[24rem] h-[24rem] object-cover rounded-full border-4 border-zinc-900 shadow-2xl z-10"
+              loading="eager"
+            />
               Olá, sou Jimy Kauã, um Desenvolvedor Backend. Tenho experiência em várias tecnologias e estou sempre em busca de novos desafios. Vamos conversar sobre como posso ajudar sua empresa!
             </p>
             <div className="flex items-center gap-6 mb-8">
@@ -80,7 +76,7 @@ export function Hero() {
             ></div>
             {/* Profile Image */}
             <img
-              src="/projects/jimy-profile.png"
+              src="/projects/jimy-profile"
               alt="Jimy Kauã - Desenvolvedor Backend"
               className="profile-image relative w-[24rem] h-[24rem] object-cover rounded-full border-4 border-zinc-900 shadow-2xl z-10"
               loading="eager"
