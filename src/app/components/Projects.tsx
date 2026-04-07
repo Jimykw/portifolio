@@ -21,11 +21,7 @@ export function Projects() {
     if (/^(https?:)?\/\//.test(assetPath)) {
       return assetPath;
     }
-
-    const isGitHubPagesProject = window.location.pathname.startsWith('/portifolio/');
-    const basePath = isGitHubPagesProject ? '/portifolio/' : '/';
-
-    return `${basePath}${assetPath.replace(/^\//, '')}`;
+    return `${import.meta.env.BASE_URL}${assetPath.replace(/^\//, '')}`;
   };
 
   const projects: Project[] = [
@@ -43,7 +39,7 @@ export function Projects() {
         'SQLAlchemy',
         'Supabase',
       ],
-      image: '/projects/gymfinancas-dashboard.png',
+      image: 'projects/gymfinancas-dashboard.png',
       link: 'https://jimykw.github.io/GymFinancasPro/',
     },
     {
