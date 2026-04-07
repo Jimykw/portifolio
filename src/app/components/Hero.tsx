@@ -80,14 +80,10 @@ export function Hero() {
             ></div>
             {/* Profile Image */}
             <img
-              src="/projects/jimy-profile"
+              src="/projects/jimy-profile.jpeg"
               alt="Jimy Kauã - Desenvolvedor Backend"
               className="profile-image relative w-[24rem] h-[24rem] object-cover rounded-full border-4 border-zinc-900 shadow-2xl z-10"
               loading="eager"
-              onError={e => {
-                const target = e.target as HTMLImageElement;
-                if (!target.src.endsWith('.jpeg')) target.src = '/projects/jimy-profile.jpeg';
-              }}
             />
           </div>
         </div>
