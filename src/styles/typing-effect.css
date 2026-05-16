@@ -1,0 +1,24 @@
+@keyframes typing {
+  from { width: 0; }
+  to { width: 100%; }
+}
+
+@keyframes blink {
+  50% { border-color: transparent; }
+}
+
+@keyframes hide-cursor {
+  to { border-right: none; }
+}
+
+.typing-effect {
+  display: inline-block;
+  width: 0;
+  border-right: 2px solid #e11d48;
+  white-space: nowrap;
+  overflow: hidden;
+  animation: 
+    typing 2.2s steps(40) 1.2s forwards,
+    blink 0.75s step-end infinite,
+    hide-cursor 7.6s forwards;
+}
