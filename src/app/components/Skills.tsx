@@ -25,18 +25,8 @@ export function Skills() {
     },
     {
       id: 2,
-      title: 'Frontend',
-      skills: ['React'],
-    },
-    {
-      id: 3,
       title: 'Ferramentas',
-      skills: ['Git', 'GitHub', 'VS Code', 'Cursor'],
-    },
-    {
-      id: 4,
-      title: 'Outros',
-      skills: ['IA', 'Metodologia Ágil'],
+      skills: ['Git', 'GitHub', 'VS Code', 'Cursor', 'React'],
     },
   ];
 
@@ -50,7 +40,7 @@ export function Skills() {
           description="Tecnologias e ferramentas que utilizo no dia a dia para entregar soluções sólidas."
         />
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8 max-w-4xl mx-auto">
           {skillGroups.map((group) => (
             <div key={group.id} className="premium-card p-6 lg:p-8">
               <h3 className="font-display text-xl text-foreground mb-5">{group.title}</h3>
