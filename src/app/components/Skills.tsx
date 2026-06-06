@@ -15,6 +15,7 @@ export function Skills() {
         'Java',
         'Spring Boot',
         'C#',
+        'ASP.NET',
         'Python',
         'Django',
         'PostgreSQL',
@@ -26,7 +27,7 @@ export function Skills() {
     {
       id: 2,
       title: 'Ferramentas',
-      skills: ['Git', 'GitHub', 'VS Code', 'Cursor', 'React'],
+      skills: ['Git', 'GitHub', 'VS Code', 'Cursor', 'IA', 'Metodologia Ágil', 'React'],
     },
   ];
 
