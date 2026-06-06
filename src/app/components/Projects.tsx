@@ -45,10 +45,20 @@ export function Projects() {
     },
     {
       id: 2,
-      title: 'Novo Projeto em Breve',
+      title: 'Valorant Companion API',
       description:
-        'Estou sempre desenvolvendo novos projetos e ampliando meu portfólio. Fique de olho para ver as próximas novidades!',
-      isComingSoon: true,
+        'Plataforma full stack para consulta de dados de Valorant com Java (Spring Boot) e React + TypeScript: catálogo de agentes, mapas, armas e modos, autenticação JWT, favoritos, composições de time, notas estratégicas, documentação Swagger e deploy em produção.',
+      technologies: [
+        'Java',
+        'Spring Boot',
+        'JWT',
+        'React',
+        'TypeScript',
+        'PostgreSQL',
+        'REST API',
+      ],
+      image: 'projects/valorant-companion.png',
+      link: 'https://valorant-companion.vercel.app',
     },
   ];
 
