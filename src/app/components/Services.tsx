@@ -14,7 +14,7 @@ export function Services() {
       id: 1,
       title: 'APIs RESTful',
       description:
-        'Desenvolvimento de APIs escaláveis com Java, Spring Boot, C#, Python e Django, seguindo boas práticas REST.',
+        'Desenvolvimento de APIs escaláveis com Java, Spring Boot, C#, .NET, Python e Django, seguindo boas práticas REST.',
       icon: <Server size={28} className="text-primary" strokeWidth={1.5} />,
     },
     {

@@ -15,7 +15,7 @@ export function Skills() {
         'Java',
         'Spring Boot',
         'C#',
-        'ASP.NET',
+        '.NET',
         'Python',
         'Django',
         'PostgreSQL',
